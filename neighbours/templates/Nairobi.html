@@ -177,10 +177,10 @@
           </div>
           </div>
           {% if request.user.is_authenticated and request.user.username == creator %}
-<a href="{{ post.id }}/delete/">Delete this post </a>
+<a href="{{ post.id }}/delete/">Delete post </a>
 {% endif %}
           {% empty %}
-          <h2>Your HoodMates are sleeping they havent posted anything</h2>
+          <h2>Your HoodMates are busy, they havent posted anything</h2>
           {% endfor %}
       
       
