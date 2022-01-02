@@ -143,3 +143,49 @@
 </div>
 
 </div>
+</div>
+</div>
+<br>
+<h2 style="font-family: 'Gochi Hand', cursive; margin-left: 300px; color: brown;">Check Whats On in your Hood below</h2>
+<br>
+<a href="home" class="btn btn-pink" style="margin-left: 500px;"><i class="fas fa-clone left"></i>Move out of HOOD</a>
+<br>
+<br>
+  <div class="row">
+      
+          {% for img in posts %}
+          <div class="col-md-4">
+          <div class="home-images">
+              <p class="home-text">
+                  <a style="font-family: 'Gochi Hand', cursive;" href="{% url 'profile' username=img.profile.username %}">{{img.profile.username}}</a>
+              </p>
+              
+              <img src="{{img.photo.cdn_url}}" alt="Post">
+              
+              <ul class="list-inline home-list">
+                  <li class="list-inline-item">
+                      <a href="{% url 'profile' username=img.profile.username %}">{{img.profile.username}}</a>
+                  </li>
+                  <li class="list-inline-item">
+                  {% autoescape on %}
+                      <p>{{img.post_caption|safe}} </p>
+                  {% endautoescape %}
+                  </li>
+              </ul>
+              
+
+          </div>
+          </div>
+          {% if request.user.is_authenticated and request.user.username == creator %}
+<a href="{{ post.id }}/delete/">Delete this post </a>
+{% endif %}
+          {% empty %}
+          <h2>Your HoodMates are sleeping they havent posted anything</h2>
+          {% endfor %}
+      
+      
+  </div>
+
+
+</div>
+{%endblock%}
