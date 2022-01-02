@@ -20,4 +20,14 @@ def index(request):
     posts = Post.get_all_posts()
 
     return render(request, 'index.html',{'posts':posts})
-    
+@login_required(login_url='/accounts/login')
+def kampala(request):
+    posts = Post.get_all_posts()
+
+    return render(request, 'Nairobi.html',{'posts':posts})
+
+@login_required(login_url='/accounts/login')
+def capetown(request):
+    posts = Post.get_all_posts()
+
+    return render(request, 'london.html',{'posts':posts})
