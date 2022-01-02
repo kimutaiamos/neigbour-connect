@@ -28,3 +28,12 @@ class Profile(models.Model):
         profile = Profile.objects.filter(user = id).first()
         return profile
 
+
+class Post(models.Model):
+    image_pic = models.ImageField(upload_to = 'profilepics', default='Image')
+    photo = ImageField(blank=True, manual_crop='800x800')
+    post_name = models.CharField(max_length = 50)
+    post_caption = HTMLField(blank=True)
+    post_date = models.DateTimeField(auto_now=True)
+    likes = models.BooleanField(default=False)
+    profile = models.ForeignKey(User, on_delete=models.CASCADE)

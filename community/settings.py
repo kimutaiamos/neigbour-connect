@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'neighbours',
     'bootstrap4',
     'tinymce',
+     'pyuploadcare.dj',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -72,7 +73,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'community.wsgi.application'
 
-
+UPLOADCARE = {
+    'pub_key':'f261dc51df2219458808',
+    'secret':'9900f676344d11d77e49',
+}
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
