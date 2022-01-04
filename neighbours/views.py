@@ -62,5 +62,19 @@ def profile(request,username):
     title = f'@{profile.username} Hood Updates'
 
     return render(request, 'profile/profile.html',{'title':title, 'profile':profile,'profile_details':profile_details,'posts':posts})
+@login_required(login_url='/accounts/login')
+def upload_post(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            upload = form.save(commit=False)
+            upload.profile = request.user
+            # print(f'post is {upload.post}')
+            upload.save()
+            return redirect('profile', username=request.user)
+    else:
+        form = PostForm()
+    
+    return render(request, 'profile/upload_post.html', {'form':form})
 
 
