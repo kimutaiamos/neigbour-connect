@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import SignupForm, PostForm, ProfileForm, CommentForm
 from .models import Post, Profile, Comments
 from  django.contrib import messages
-# from .emails import send_activation_email
+from .emails import send_activation_email
 # from .tokens import account_activation_token
 # Create your views here.
 
@@ -31,3 +31,36 @@ def capetown(request):
     posts = Post.get_all_posts()
 
     return render(request, 'london.html',{'posts':posts})
+
+def signup(request):
+    if request.user.is_authenticated():
+        return redirect('index')
+    else:
+        if request.method == 'POST':
+            form = SignupForm(request.POST)
+            if form.is_valid():
+                user = form.save(commit=False)
+                user.is_active = False
+                user.save()
+                current_site = get_current_site(request)
+                to_email = form.cleaned_data.get('email')
+                send_activation_email(user, current_site, to_email)
+                return HttpResponse('Confirm your email address to complete registration')
+        else:
+            form = SignupForm()
+            return render(request, 'registration/signup.html',{'form':form})
+
+
+def profile(request,username):
+    profile = User.objects.get(username=username)
+    try:
+        profile_details = Profile.get_by_id(profile.id)
+    except:
+        profile_details = Profile.filter_by_id(profile.id)
+    
+    posts = Post.get_profile_posts(profile.id)
+    title = f'@{profile.username} Hood Updates'
+
+    return render(request, 'profile/profile.html',{'title':title, 'profile':profile,'profile_details':profile_details,'posts':posts})
+
+
