@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'neighbours',
     'bootstrap4',
     'tinymce',
+    'registration',
      'pyuploadcare.dj',
     'django.contrib.admin',
     'django.contrib.auth',
