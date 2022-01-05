@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import SignupForm, PostForm, ProfileForm, CommentForm
 from .models import Post, Profile, Comments
 from  django.contrib import messages
-from .emails import send_activation_email
+# from .emails import send_activation_email
 # from .tokens import account_activation_token
 # Create your views here.
 
@@ -77,4 +77,17 @@ def upload_post(request):
     
     return render(request, 'profile/upload_post.html', {'form':form})
 
+@login_required(login_url='/accounts/login')
+def edit_profile(request):
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            edit = form.save(commit=False)
+            edit.user = request.user
+            edit.save()
+            return redirect('profile.html')
+    else:
+        form = ProfileForm()
+
+    return render(request, 'profile/edit_profile.html', {'form':form})
 
