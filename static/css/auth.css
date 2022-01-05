@@ -1,0 +1,81 @@
+@font-face {
+    font-family: billabong;
+    src: url('/static/Font/Billabong.ttf');
+    font-weight: bold;
+  }
+  
+  body {
+    background-color: #7e4949;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif
+  }
+  
+  .signup-page {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 30px auto 0;
+    max-width: 1080px;
+    padding-bottom: 44px;
+    width: 100%;
+  }
+  
+  .signup-fields {
+    color: #333030;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 12px;
+    max-width: 400px;
+  }
+  
+  .section {
+    background-color:grey;
+    border: 1px solid #ac9696be;
+    border-radius: 1px;
+    margin: 0 0 10px;
+    padding: 15px 0;
+  }
+  
+  .section h1 {
+    font-family: 'sanserif';
+    font-size: 60px;
+    text-align: center;
+    color: gray;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .section p{
+    text-align: center;
+    padding: 1rem 0;
+    margin: 0;
+  }
+  
+  .small {
+    color:gray;
+  }
+  
+  .form-section {
+    /* max-width: 250px; */
+    font-size: 10px;
+    margin: 0 2rem;
+  }
+  .sign-up{
+    display: flex;
+    justify-content: center;
+    padding-top: 15%;
+  }
