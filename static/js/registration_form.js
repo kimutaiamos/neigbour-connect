@@ -50,7 +50,7 @@ $("#signup").click(function() {
             },
             password: {
               required: true,
-              minlength: 5
+              minlength: 8
             }
           },
           
@@ -59,7 +59,7 @@ $("#signup").click(function() {
             lastname: "Please enter your lastname",
             password: {
               required: "Please provide a password",
-              minlength: "Your password must be at least 5 characters long"
+              minlength: "Your password must be at least 8 characters long"
             },
             email: "Please enter a valid email address"
           },
