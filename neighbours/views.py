@@ -107,4 +107,14 @@ def single_post(request, post_id):
         form = CommentForm()
         
     return render(request, 'post.html', {'post':post, 'form':form, 'comments':comments})
+def search(request):
+    if 'search' in request.GET and request.GET['search']:
+        search_term = request.GET.get('search')
+        profiles = Profile.search_profile(search_term)
+        message = f'{search_term}'
+
+        return render(request, 'search.html',{'message':message, 'profiles':profiles})
+    else:
+        message = 'Enter term to search'
+        return render(request, 'search.html', {'message':message})
 
