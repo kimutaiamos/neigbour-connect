@@ -33,7 +33,7 @@ def london(request):
     return render(request, 'london.html',{'posts':posts})
 
 def signup(request):
-    if request.user.is_authenticated():
+    if request.User.is_authenticated():
         return redirect('index')
     else:
         if request.method == 'POST':
@@ -49,6 +49,7 @@ def signup(request):
         else:
             form = SignupForm()
             return render(request, 'registration/signup.html',{'form':form})
+
 
 
 def profile(request,username):
