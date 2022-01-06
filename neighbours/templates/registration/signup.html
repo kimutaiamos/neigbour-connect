@@ -1,0 +1,51 @@
+{%extends "registration/base.html"%}
+{% load bootstrap4 %}
+
+{% block content %}
+
+<div class="container-fluid" style="background-image:url('https://images.pexels.com/photos/414144/pexels-photo-414144.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');background-repeat:no-repeat; background-size:cover;" >
+    <br>
+    <br>
+    <br>
+    <!-- empty div -->
+    <div class='row'>
+       <div class='col-md-5' style="margin-left: 400px;">
+       <div class="panel-body card register-card" style="background-image:url('https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');background-size:cover;background-repeat:no-repeat;">
+           <div style="color:black;">
+           <h2 class='header' style="color: white;font-family: Billabong, cursive;">City-Hood<h2>
+           <h5 style='color:black;text-align:center;font-size:50px;font-family: Billabong, cursive;'><strong>Sign up</strong></h5>
+         <form  action="/accounts/register/" method="post">
+               {%csrf_token%}
+               {% for field in form %}
+               <div class='fieldWrapper'>
+                   <h5 style='text-align:center;font-family: Billabong, cursive;font-size:27px;'>{{field.label}}</h5>
+
+                   <p style='width:100%;text-align:center;'>{{field}}</p>
+                   </div>
+                   {% for error in field.errors %}
+                 <p style="color: red">{{ error }}</p>
+                   {% endfor %}
+               {% endfor %}
+               
+             <input type="submit" class="btn btn-success btn-sm" value="Sign Up" style='text-align:center;margin-left: 210px;font-size:17px;margin-top:20px;'>
+           </form>
+
+
+
+        </div>
+        <div class='card login-card'>
+            <h1 style='text-align:center;font-family:Roboto, sans-serif;font-size:14px; width:100%;margin-top:20px;'>
+                If you have an account: </h1>
+            <a href='/accounts/login' style='text-align:center;font-family:Roboto, sans-serif;font-size:14px;width:100%;margin-top:20px;'>Sign In</a>
+           <input type="hidden" name="next" value="{{next}}">
+        </div>
+        
+        <div class='col-md-2 col-xs-2 col-sm-2'>
+        </div>
+
+          
+          </div>
+   </div>
+   </div>
+</div>
+{% endblock %}
