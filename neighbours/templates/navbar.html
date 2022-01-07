@@ -1,12 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navMain">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navMain">
     <div class="container">
-        <a class="smooth-scroll" href="/"><i class="fa fa-home fa-3x" > | </i></a>
+        <a class="smooth-scroll" href="/"><i class="fa-thin fa-house-person-return">|</i></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
             aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa fa-bars"></i>
         </button>
         <p style="font-family: 'Billabong', cursive; font-size: 30px;
-        ">Hood</p>
+        ">Neighbourhood</p>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <div class="container-fluid">
                 <div class="row">
@@ -15,9 +15,10 @@
                   {% endif %}
                  
                     <div class="col-md-12 nav-search">
-                        <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search' %}">
-                            <input class="form-control my-2 my-sm-0 search-input" name="search" type="search" placeholder="Search HoodMates" aria-label="Search">
-                        </form>
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search neighbourhood" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                          </form>
                     </div>
                 </div>
             </div>
