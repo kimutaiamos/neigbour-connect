@@ -116,6 +116,6 @@ def search(request):
 
         return render(request, 'search.html',{'message':message, 'profiles':profiles})
     else:
-        message = 'Enter term to search'
+        message = 'Enter the search term'
         return render(request, 'search.html', {'message':message})
 
