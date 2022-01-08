@@ -192,12 +192,104 @@
       <h1 style="font-size: 60px; color: lightcoral;">QUESTIONS?</h1>
       <h3 style="color: white;">Explore what you need here with us today<br>Drop us a line on our contact page</h3>
       <br>
-      <select class="bg-blue hover:bg-blue-dark text-grey font-bold py-2 px-4 rounded-full" id="grid-state">
-          <option style="color:grey; font-size:18px;">Get Answers</option>
-          <option style="color:grey; font-size:18px;"> Email:neighbourhood@gmail.com</option>
-          <option style="color:grey; font-size:18px;">Call us on toll free number: (+254)743880558</option>
-        </select>
     </div>
   </div>
+      <!--Section: Contact v.2-->
+      <section class="mb-4 bg-info">
+
+        <!--Section heading-->
+        <h2 class="h1-responsive font-weight-bold text-center my-4 text-white">Contact us</h2>
+        <!--Section description-->
+        <p class="text-center w-responsive mx-auto mb-5 text-white">Do you have any questions? Please do not hesitate to contact us directly. <br>Our team will come back to you within
+          a matter of hours to help you.</p>
+
+        <div class="row">
+
+          <!--Grid column-->
+          <div class="col-md-9 mb-md-0 mb-5">
+            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+              <!--Grid row-->
+              <div class="row">
+
+                <!--Grid column-->
+                <div class="col-md-6 text-dark">
+                  <div class="md-form mb-0 ">
+                    <input type="text" id="name" name="name" class="form-control">
+                    <label for="name" class="">Your name</label>
+                  </div>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-6">
+                  <div class="md-form mb-0">
+                    <input type="text" id="email" name="email" class="form-control">
+                    <label for="email" class="">Your email</label>
+                  </div>
+                </div>
+                <!--Grid column-->
+
+              </div>
+              <!--Grid row-->
+
+              <!--Grid row-->
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="md-form mb-0">
+                    <input type="text" id="subject" name="subject" class="form-control">
+                    <label for="subject" class="">Subject</label>
+                  </div>
+                </div>
+              </div>
+              <!--Grid row-->
+
+              <!--Grid row-->
+              <div class="row">
+
+                <!--Grid column-->
+                <div class="col-md-12">
+
+                  <div class="md-form">
+                    <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                    <label for="message">Your message</label>
+                  </div>
+
+                </div>
+              </div>
+              <!--Grid row-->
+
+            </form>
+
+            <div class="text-center text-md-left">
+              <a href="registration/signup" class="btn btn-primary" >Send</a>
+            </div>
+            <div class="status"></div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-3 text-center">
+            <ul class="list-unstyled mb-0">
+              <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                <p>Nairobi, CA 94126, kenya</p>
+              </li>
+
+              <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                <p>+ 254 743 880 558 </p>
+              </li>
+
+              <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                <p>contact@hoods.com</p>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+        </div>
+
+      </section>
+      <!--Section: Contact v.2-->
+
   
 {% endblock %}

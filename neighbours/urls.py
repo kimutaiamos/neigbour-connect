@@ -6,10 +6,10 @@ from . import views
 urlpatterns = [
     url(r'^$', views.home,name ='home'),
     url(r'^home', views.home,name ='home'),
-    url(r'^signup',views.signup, name='signup'),
+    url(r'^Signup',views.signup, name='signup'),
     url(r'^index', views.index, name = 'index'),
     url(r'^Nairobi', views.Nairobi, name = 'Nairobi'),
-    url(r'^london', views.index, name = 'london'),
+    url(r'^london', views.london, name = 'london'),
     url(r'user/(?P<username>\w+)', views.profile,name='profile'),
     url(r'^upload/$', views.upload_post, name='upload_post'),
     url(r'^accounts/edit/',views.edit_profile, name='edit_profile'),

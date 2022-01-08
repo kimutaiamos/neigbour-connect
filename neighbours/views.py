@@ -33,8 +33,8 @@ def london(request):
     return render(request, 'london.html',{'posts':posts})
 
 def signup(request):
-    if request.User.is_authenticated():
-        return redirect('index')
+    if request.user.is_authenticated:
+        return redirect('index.html')
     else:
         if request.method == 'POST':
             form = SignupForm(request.POST)
